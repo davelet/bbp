@@ -7,9 +7,7 @@
 BBP 公式于 1995 年由 Simon Plouffe 与 David H. Bailey 和 Peter Borwein 合作发现。该公式提供了一种在 16 进制下计算 π 的方法。
 
 公式为：
-$$
-\pi = \sum_{k=0}^{\infty} \frac{1}{16^k} \left( \frac{4}{8k+1} - \frac{2}{8k+4} - \frac{1}{8k+5} - \frac{1}{8k+6} \right)
-$$
+![BBP公式](https://latex.codecogs.com/png.latex?\pi%20=%20\sum_{k=0}^{\infty}%20\frac{1}{16^k}%20\left(%20\frac{4}{8k+1}%20-%20\frac{2}{8k+4}%20-%20\frac{1}{8k+5}%20-%20\frac{1}{8k+6}%20\right))
 
 这种流出算法允许直接提取 π 的单个十六进制数字。
 
@@ -48,9 +46,7 @@ $$
 ### 解决方案：分解 BBP 公式
 
 BBP 公式实际上是很多小分数之和。当我们将其乘以 `16^(n-1)`，会得到一个新的巨大的求和表达式：
-$$
-16^{n-1}\pi = \sum_{k=0}^{\infty} \left( \frac{4\cdot 16^{n-1-k}}{8k+1} - \frac{2\cdot 16^{n-1-k}}{8k+4} - \frac{1\cdot 16^{n-1-k}}{8k+5} - \frac{1\cdot 16^{n-1-k}}{8k+6} \right)
-$$
+![乘以16^(n-1)后的BBP公式](https://latex.codecogs.com/png.latex?16^{n-1}\pi%20=%20\sum_{k=0}^{\infty}%20\left(%20\frac{4\cdot%2016^{n-1-k}}{8k+1}%20-%20\frac{2\cdot%2016^{n-1-k}}{8k+4}%20-%20\frac{1\cdot%2016^{n-1-k}}{8k+5}%20-%20\frac{1\cdot%2016^{n-1-k}}{8k+6}%20\right))
 
 我们只关注这个求和的**小数部分**。关键在于可以将该求和分为两部分：
 

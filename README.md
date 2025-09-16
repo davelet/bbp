@@ -1,5 +1,7 @@
 # BBP Formula π Calculator
 
+[中文版本](README-zh.md) | [Русский версия](README-ru.md) | [日本語版](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md)
+
 This project is a Rust implementation of the Bailey-Borwein-Plouffe (BBP) formula for calculating the digits of π. Its most remarkable feature is the ability to compute the *n*th hexadecimal digit of π directly, without needing to calculate all the preceding digits.
 
 ## The BBP Formula
@@ -7,9 +9,7 @@ This project is a Rust implementation of the Bailey-Borwein-Plouffe (BBP) formul
 The BBP formula was discovered in 1995 by Simon Plouffe in collaboration with David H. Bailey and Peter Borwein. It provides a way to calculate π in base 16.
 
 The formula is:
-$$
-\pi = \sum_{k=0}^{\infty} \frac{1}{16^k} \left( \frac{4}{8k+1} - \frac{2}{8k+4} - \frac{1}{8k+5} - \frac{1}{8k+6} \right)
-$$
+![BBP formula](https://latex.codecogs.com/png.latex?\pi%20=%20\sum_{k=0}^{\infty}%20\frac{1}{16^k}%20\left(%20\frac{4}{8k+1}%20-%20\frac{2}{8k+4}%20-%20\frac{1}{8k+5}%20-%20\frac{1}{8k+6}%20\right))
 
 This spigot algorithm allows for the extraction of individual hexadecimal digits of π.
 
@@ -48,9 +48,7 @@ This is where the BBP formula comes to the rescue. It gives us a way to calculat
 ### The Solution: Splitting the BBP Formula
 
 The BBP formula is a giant sum of many small fractions. When we multiply it by `16^(n-1)`, we get a new giant sum:
-$$
-16^{n-1}\pi = \sum_{k=0}^{\infty} \left( \frac{4\cdot 16^{n-1-k}}{8k+1} - \frac{2\cdot 16^{n-1-k}}{8k+4} - \frac{1\cdot 16^{n-1-k}}{8k+5} - \frac{1\cdot 16^{n-1-k}}{8k+6} \right)
-$$
+![Multiplied BBP formula](https://latex.codecogs.com/png.latex?16^{n-1}\pi%20=%20\sum_{k=0}^{\infty}%20\left(%20\frac{4\cdot%2016^{n-1-k}}{8k+1}%20-%20\frac{2\cdot%2016^{n-1-k}}{8k+4}%20-%20\frac{1\cdot%2016^{n-1-k}}{8k+5}%20-%20\frac{1\cdot%2016^{n-1-k}}{8k+6}%20\right))
 
 We only care about the fractional part of this sum. The key insight is that we can split this sum into two parts:
 
