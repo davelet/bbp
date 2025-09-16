@@ -159,3 +159,7 @@ cargo build --release
 ## 依赖
 
 - `bigdecimal`：用于高精度十进制运算，将十六进制转换为十进制时保证精度。
+
+## 正确性证明
+
+BBP公式的证明基于将π展开为一个无限级数。通过分析级数的收敛性以及各项之间误差的相互抵消，可以证明该公式以指数方式收敛到π。详细证明可参见 Bailey, Borwein 和 Plouffe 的原始论文 [点击查看](https://www.davidhbailey.com/dhbpapers/digits.pdf)。

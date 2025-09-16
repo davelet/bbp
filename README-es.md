@@ -129,3 +129,7 @@ El binario se encontrará en `target/release/bbp`.
 ## Dependencias
 
 - `bigdecimal`: Se utiliza para realizar cálculos de precisión arbitraria durante la conversión de hexadecimal a decimal.
+
+## Prueba de Correctitud
+
+La validez de la fórmula BBP se fundamenta en la expansión de π como una serie infinita. Al analizar la convergencia de la serie y la cancelación de errores entre sus términos, se demuestra que la suma converge exponencialmente hacia π. Para una demostración detallada, consulte el artículo original de Bailey, Borwein y Plouffe.

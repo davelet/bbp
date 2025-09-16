@@ -114,6 +114,10 @@ The integer part of this result, `4`, is the *n*th hexadecimal digit of π we we
 
 That's the complete algorithm. It cleverly avoids infinite numbers and huge calculations by splitting the problem and using modular arithmetic, allowing us to pinpoint a single digit of π from the vastness of its infinite sequence.
 
+## Proof of Correctness
+
+The BBP formula has been rigorously derived based on the expansion of π as an infinite series. Its correctness follows from the convergence properties of the series and the cancellation of errors between its terms. The derivation uses advanced techniques from analysis and number theory, ensuring that the sum converges exponentially fast to π. For detailed proofs, see [the original paper by Bailey, Borwein, and Plouffe](https://www.davidhbailey.com/dhbpapers/digits.pdf).
+
 ## Code Implementation
 
 The project is organized into three main modules:
